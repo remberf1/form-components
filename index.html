@@ -5,21 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Form components</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=visibility,visibility_off" />
+   
 </head>
 <body>
     <div class="container">
-        <div class="column-1">1</div>
-        <div class="column-2">2
+        <div class="form-container">
+            <form action="#" method="post">
+                <div class="form-group">
+                <label for="fullname" class="required">Full Name</label><br>
+                <input class="form_input" aria-invalid="false" type="text" id="fullname" name="fullname" aria-label="What should we call you" aria-required="true" placeholder="What should we call you" required oninput="this.value.replace(/[^a-zA-Z\s]/g,'')">
+                <span id="fullnameError" class="error-message" style="display:none;">This field is required.</span>
+                </div>
+                <div class="form-group">
+                <label for="email">Email Address</label><br>
+                <input class="form_input" type="email" id="email" name="email" aria-label="john@doe.com" aria-required="true"placeholder="john@doe.com" required><br>
+                </div>
+                <span class="error-message">Email is already taken</span>
+                <div class="form-group password-container">
+                <label for="password">Password</label><br>
+                <input type="password" class="form_input" type="" id="password" aria-label="password" name="password" >
+                <button type="button" class="show-password-btn" aria-label="Password is hidden" aria-pressed="false">
+                    <span class="material-symbols-outlined">
+                        visibility
+                        </span>
+                  </button><br>
+                </div>
+                <div class="form-group password-container">
+                    <label for="confirm-password">Confirm Password</label><br>
+                    <input type="password" class="form_input" type="" id="confirm-password" name="confirm-password">
+                    <button type="button" class="show-password-btn" aria-label="Password is hidden" aria-pressed="false">
+                        <span class="material-symbols-outlined">
+                            visibility_off
+                            </span>
+                      </button><br>
+                </div>
+                <span class="error-message">Passwords must match</span>
+                <br><br>
+                <div class='form-group'>
+                 <button class="update_button" type="submit" value="Submit">Update Profile</button>
+                </div>
+            </form>
+        </div>
+        <div class="completeness-container">
             <div class="image-container">
-                <img class="image-progress" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="image">
-                <p>Profile Complete </p>
+                <div class="progress">
+                </div>
+                <span class="percentage">65%</span>
+                <p>Profile Completeness </p>
             </div>
-            <div class="completeness-container">
-                <p>Create Account</p>
-                <p>Update Roadmap Progress</p>
-                <p>Setuo Public Profile</p>
-                <p>Complete your first project</p>
-                <p>Invite your friends</p>
+
+            <div class="checklist-container">
+                <ul class="checklist">
+                    <li class="complete">Create Account</li>
+                    <li class="complete">Update Roadmap Progress</li>
+                    <li class="complete">Setup Public Profile</li>
+                    <li class="incomplete">Complete your first project</li>
+                    <li class="incomplete">Invite your Friends</li>
+                  </ul>
             </div>
         </div>
     </div>
